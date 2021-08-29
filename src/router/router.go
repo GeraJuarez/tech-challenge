@@ -1,7 +1,7 @@
 package router
 
 import (
-	"example/cloud-app/store/controller"
+	"tech-challenge/controller"
 
 	"github.com/gorilla/mux"
 )

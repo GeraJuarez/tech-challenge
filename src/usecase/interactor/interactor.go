@@ -3,11 +3,11 @@ package interactor
 import (
 	"encoding/json"
 	"errors"
-	"example/cloud-app/store/model"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"tech-challenge/model"
 )
 
 var ErrorPkmnNotFound = errors.New("pokemon not found")
@@ -41,7 +41,7 @@ func (api *extApiInteractor) Get(name string) (model.Pokemon, error) {
 
 	log.Printf("Pokemon API Status response %d", response.StatusCode)
 
-	if response.StatusCode != http.StatusAccepted {
+	if response.StatusCode == http.StatusNotFound {
 		return pokemon, ErrorPkmnNotFound
 	} else {
 		var pokemon model.Pokemon

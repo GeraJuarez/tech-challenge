@@ -3,7 +3,9 @@ package controller
 import (
 	"encoding/json"
 	"errors"
-	"example/cloud-app/store/usecase/interactor"
+	"log"
+	"tech-challenge/usecase/interactor"
+
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -62,6 +64,7 @@ func (c *extApiController) GetValue(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	log.Print("OK")
 	w.Header().Set("Content-Type", "application/json")
 	enc := json.NewEncoder(w)
 	if err := enc.Encode(value); err != nil {

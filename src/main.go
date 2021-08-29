@@ -1,10 +1,10 @@
 package main
 
 import (
-	"example/cloud-app/store/registry"
-	"example/cloud-app/store/router"
 	"log"
 	"net/http"
+	"tech-challenge/registry"
+	"tech-challenge/router"
 	"time"
 )
 

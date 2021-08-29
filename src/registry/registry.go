@@ -1,13 +1,11 @@
 package registry
 
 import (
-	"example/cloud-app/store/controller"
-	"example/cloud-app/store/usecase/interactor"
+	"tech-challenge/controller"
+	"tech-challenge/usecase/interactor"
 )
 
-type registry struct {
-	//kvstore_repo repository.KeyValStoreRepository
-}
+type registry struct{}
 
 type Registry interface {
 	NewAppController() controller.AppController
@@ -35,7 +33,3 @@ func (r *registry) NewExtAPIController() controller.ExtApiController {
 func (r *registry) NewExtAPIInteractor() interactor.ExtApiInteractor {
 	return interactor.NewExtApiInteractor()
 }
-
-//func (r *registry) NewKVStoreRepository() repository.KeyValStoreRepository {
-//	return r.kvstore_repo
-//}
