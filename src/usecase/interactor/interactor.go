@@ -24,6 +24,7 @@ func NewExtApiInteractor() ExtApiInteractor {
 }
 
 func (api *extApiInteractor) Get(name string) (model.Pokemon, error) {
+	// TODO: try this practices for http clients: https://dev.to/plutov/writing-rest-api-client-in-go-3fkg
 	var pokemon model.Pokemon
 	requestURL := fmt.Sprintf("http://pokeapi.co/api/v2/pokemon/%s", name)
 
